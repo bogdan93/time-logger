@@ -1,0 +1,582 @@
+[
+  {
+    "id": "systemprofiles0",
+    "name": "profiles",
+    "system": true,
+    "listRule": "userId = @request.user.id",
+    "viewRule": "userId = @request.user.id",
+    "createRule": null,
+    "updateRule": null,
+    "deleteRule": null,
+    "schema": [
+      {
+        "id": "pbfielduser",
+        "name": "userId",
+        "type": "user",
+        "system": true,
+        "required": true,
+        "unique": true,
+        "options": {
+          "maxSelect": 1,
+          "cascadeDelete": true
+        }
+      },
+      {
+        "id": "pbfieldname",
+        "name": "name",
+        "type": "text",
+        "system": false,
+        "required": false,
+        "unique": false,
+        "options": {
+          "min": null,
+          "max": null,
+          "pattern": ""
+        }
+      },
+      {
+        "id": "pbfieldavatar",
+        "name": "avatar",
+        "type": "file",
+        "system": false,
+        "required": false,
+        "unique": false,
+        "options": {
+          "maxSelect": 1,
+          "maxSize": 5242880,
+          "mimeTypes": [
+            "image/jpg",
+            "image/jpeg",
+            "image/png",
+            "image/svg+xml",
+            "image/gif"
+          ],
+          "thumbs": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "dcmes2w11ekjy6z",
+    "name": "projects",
+    "system": false,
+    "listRule": "userId = '' || userId = @request.user.id",
+    "viewRule": "userId = '' || userId = @request.user.id",
+    "createRule": "@request.user.id = userId && isReadonly = false",
+    "updateRule": "@request.user.id = userId && isReadonly = false",
+    "deleteRule": "@request.user.id = userId && isReadonly = false",
+    "schema": [
+      {
+        "id": "s7dpuotl",
+        "name": "name",
+        "type": "text",
+        "system": false,
+        "required": true,
+        "unique": false,
+        "options": {
+          "min": 1,
+          "max": 64,
+          "pattern": ""
+        }
+      },
+      {
+        "id": "xzd2knyx",
+        "name": "odooid",
+        "type": "text",
+        "system": false,
+        "required": true,
+        "unique": false,
+        "options": {
+          "min": 1,
+          "max": 4,
+          "pattern": ""
+        }
+      },
+      {
+        "id": "alao4azd",
+        "name": "userId",
+        "type": "text",
+        "system": false,
+        "required": false,
+        "unique": false,
+        "options": {
+          "min": null,
+          "max": null,
+          "pattern": ""
+        }
+      },
+      {
+        "id": "t5na7s5x",
+        "name": "isReadonly",
+        "type": "bool",
+        "system": false,
+        "required": false,
+        "unique": false,
+        "options": {}
+      }
+    ]
+  },
+  {
+    "id": "fmke95gci1s7air",
+    "name": "workhour_details",
+    "system": false,
+    "listRule": "userId = '' || userId = @request.user.id",
+    "viewRule": "userId = '' || userId = @request.user.id",
+    "createRule": "@request.user.id = userId && isReadonly = false",
+    "updateRule": "@request.user.id = userId && isReadonly = false",
+    "deleteRule": "@request.user.id = userId && isReadonly = false",
+    "schema": [
+      {
+        "id": "2z1478r9",
+        "name": "details",
+        "type": "text",
+        "system": false,
+        "required": true,
+        "unique": false,
+        "options": {
+          "min": 5,
+          "max": 124,
+          "pattern": ""
+        }
+      },
+      {
+        "id": "jy25rdnj",
+        "name": "short",
+        "type": "text",
+        "system": false,
+        "required": true,
+        "unique": false,
+        "options": {
+          "min": 1,
+          "max": 124,
+          "pattern": ""
+        }
+      },
+      {
+        "id": "xhrytbae",
+        "name": "isThisWork",
+        "type": "bool",
+        "system": false,
+        "required": false,
+        "unique": false,
+        "options": {}
+      },
+      {
+        "id": "qvguofkh",
+        "name": "isReadonly",
+        "type": "bool",
+        "system": false,
+        "required": false,
+        "unique": false,
+        "options": {}
+      },
+      {
+        "id": "ychblliu",
+        "name": "userId",
+        "type": "text",
+        "system": false,
+        "required": false,
+        "unique": false,
+        "options": {
+          "min": null,
+          "max": null,
+          "pattern": ""
+        }
+      }
+    ]
+  },
+  {
+    "id": "nw5axwb5dveuoj1",
+    "name": "workday_logs",
+    "system": false,
+    "listRule": "@request.user.id = userId",
+    "viewRule": "@request.user.id = userId",
+    "createRule": "@request.user.id = userId",
+    "updateRule": "@request.user.id = userId",
+    "deleteRule": "@request.user.id = userId",
+    "schema": [
+      {
+        "id": "ef1tyxvg",
+        "name": "day",
+        "type": "number",
+        "system": false,
+        "required": true,
+        "unique": false,
+        "options": {
+          "min": 1,
+          "max": 32
+        }
+      },
+      {
+        "id": "xxh4wgm4",
+        "name": "month",
+        "type": "number",
+        "system": false,
+        "required": true,
+        "unique": false,
+        "options": {
+          "min": 1,
+          "max": 13
+        }
+      },
+      {
+        "id": "jm4xnvsz",
+        "name": "year",
+        "type": "number",
+        "system": false,
+        "required": true,
+        "unique": false,
+        "options": {
+          "min": 1,
+          "max": 3000
+        }
+      },
+      {
+        "id": "eck9z21x",
+        "name": "workedHours",
+        "type": "json",
+        "system": false,
+        "required": true,
+        "unique": false,
+        "options": {}
+      },
+      {
+        "id": "jq4xqdrz",
+        "name": "userId",
+        "type": "text",
+        "system": false,
+        "required": false,
+        "unique": false,
+        "options": {
+          "min": null,
+          "max": null,
+          "pattern": ""
+        }
+      }
+    ]
+  },
+  {
+    "id": "kzn01p58622qfv7",
+    "name": "signatures",
+    "system": false,
+    "listRule": "@request.user.id = userId",
+    "viewRule": "@request.user.id = userId",
+    "createRule": "@request.user.id = userId",
+    "updateRule": "@request.user.id = userId",
+    "deleteRule": "@request.user.id = userId",
+    "schema": [
+      {
+        "id": "x4zcmmz7",
+        "name": "name",
+        "type": "text",
+        "system": false,
+        "required": true,
+        "unique": false,
+        "options": {
+          "min": 1,
+          "max": 40,
+          "pattern": ""
+        }
+      },
+      {
+        "id": "lbdcmiwb",
+        "name": "field",
+        "type": "file",
+        "system": false,
+        "required": true,
+        "unique": false,
+        "options": {
+          "maxSelect": 1,
+          "maxSize": 15242880,
+          "mimeTypes": [
+            "image/jpg",
+            "image/jpeg",
+            "image/png"
+          ],
+          "thumbs": [
+            "100x100f"
+          ]
+        }
+      },
+      {
+        "id": "oimfnqko",
+        "name": "userId",
+        "type": "text",
+        "system": false,
+        "required": false,
+        "unique": false,
+        "options": {
+          "min": null,
+          "max": null,
+          "pattern": ""
+        }
+      }
+    ]
+  },
+  {
+    "id": "zrzweq0ios2p2bz",
+    "name": "companies",
+    "system": false,
+    "listRule": "userId = '' || userId = @request.user.id",
+    "viewRule": "userId = '' || userId = @request.user.id",
+    "createRule": "@request.user.id = userId && isReadonly = false",
+    "updateRule": "@request.user.id = userId && isReadonly = false",
+    "deleteRule": "@request.user.id = userId && isReadonly = false",
+    "schema": [
+      {
+        "id": "wjcijxda",
+        "name": "name",
+        "type": "text",
+        "system": false,
+        "required": true,
+        "unique": false,
+        "options": {
+          "min": 1,
+          "max": 124,
+          "pattern": ""
+        }
+      },
+      {
+        "id": "8judklkp",
+        "name": "nrRegCom",
+        "type": "text",
+        "system": false,
+        "required": true,
+        "unique": false,
+        "options": {
+          "min": 1,
+          "max": 124,
+          "pattern": ""
+        }
+      },
+      {
+        "id": "c2rihcuv",
+        "name": "cui",
+        "type": "text",
+        "system": false,
+        "required": true,
+        "unique": false,
+        "options": {
+          "min": 1,
+          "max": 20,
+          "pattern": ""
+        }
+      },
+      {
+        "id": "th7fcjl0",
+        "name": "sediu",
+        "type": "text",
+        "system": false,
+        "required": true,
+        "unique": false,
+        "options": {
+          "min": 1,
+          "max": 512,
+          "pattern": ""
+        }
+      },
+      {
+        "id": "2rajxaaw",
+        "name": "iban",
+        "type": "text",
+        "system": false,
+        "required": true,
+        "unique": false,
+        "options": {
+          "min": 1,
+          "max": 124,
+          "pattern": ""
+        }
+      },
+      {
+        "id": "hggf1w8a",
+        "name": "bankName",
+        "type": "text",
+        "system": false,
+        "required": true,
+        "unique": false,
+        "options": {
+          "min": 1,
+          "max": 124,
+          "pattern": ""
+        }
+      },
+      {
+        "id": "mbgh2ubx",
+        "name": "capitalSocial",
+        "type": "text",
+        "system": false,
+        "required": false,
+        "unique": false,
+        "options": {
+          "min": 1,
+          "max": 124,
+          "pattern": ""
+        }
+      },
+      {
+        "id": "zv10laof",
+        "name": "delegat_nume",
+        "type": "text",
+        "system": false,
+        "required": false,
+        "unique": false,
+        "options": {
+          "min": 1,
+          "max": 124,
+          "pattern": ""
+        }
+      },
+      {
+        "id": "xi8itzff",
+        "name": "delegat_cnp",
+        "type": "text",
+        "system": false,
+        "required": false,
+        "unique": false,
+        "options": {
+          "min": 1,
+          "max": 124,
+          "pattern": ""
+        }
+      },
+      {
+        "id": "ad5eprj7",
+        "name": "delegat_ciSerie",
+        "type": "text",
+        "system": false,
+        "required": false,
+        "unique": false,
+        "options": {
+          "min": 1,
+          "max": 124,
+          "pattern": ""
+        }
+      },
+      {
+        "id": "5hhfowgu",
+        "name": "delegat_ciNr",
+        "type": "text",
+        "system": false,
+        "required": false,
+        "unique": false,
+        "options": {
+          "min": 1,
+          "max": 124,
+          "pattern": ""
+        }
+      },
+      {
+        "id": "sqy6wgey",
+        "name": "delegat_eliberatDe",
+        "type": "text",
+        "system": false,
+        "required": false,
+        "unique": false,
+        "options": {
+          "min": 1,
+          "max": 124,
+          "pattern": ""
+        }
+      },
+      {
+        "id": "wbdoah6b",
+        "name": "judet",
+        "type": "text",
+        "system": false,
+        "required": false,
+        "unique": false,
+        "options": {
+          "min": 1,
+          "max": 50,
+          "pattern": ""
+        }
+      },
+      {
+        "id": "6mbu72lz",
+        "name": "isReadonly",
+        "type": "bool",
+        "system": false,
+        "required": false,
+        "unique": false,
+        "options": {}
+      },
+      {
+        "id": "c5fm4bed",
+        "name": "userId",
+        "type": "text",
+        "system": false,
+        "required": false,
+        "unique": false,
+        "options": {
+          "min": null,
+          "max": null,
+          "pattern": ""
+        }
+      }
+    ]
+  },
+  {
+    "id": "8jc9ewp67eh6r2t",
+    "name": "companies_contract_details",
+    "system": false,
+    "listRule": "@request.user.id = userId",
+    "viewRule": "@request.user.id = userId",
+    "createRule": "@request.user.id = userId",
+    "updateRule": "@request.user.id = userId",
+    "deleteRule": "@request.user.id = userId",
+    "schema": [
+      {
+        "id": "d9dkcpyz",
+        "name": "description",
+        "type": "text",
+        "system": false,
+        "required": true,
+        "unique": false,
+        "options": {
+          "min": 1,
+          "max": 512,
+          "pattern": ""
+        }
+      },
+      {
+        "id": "cpc5eto8",
+        "name": "userId",
+        "type": "text",
+        "system": false,
+        "required": false,
+        "unique": false,
+        "options": {
+          "min": null,
+          "max": null,
+          "pattern": ""
+        }
+      }
+    ]
+  },
+  {
+    "id": "k890ak165cfzadl",
+    "name": "test",
+    "system": false,
+    "listRule": null,
+    "viewRule": null,
+    "createRule": null,
+    "updateRule": null,
+    "deleteRule": null,
+    "schema": [
+      {
+        "id": "omj5yj5l",
+        "name": "test_field",
+        "type": "text",
+        "system": false,
+        "required": false,
+        "unique": false,
+        "options": {
+          "min": null,
+          "max": null,
+          "pattern": ""
+        }
+      }
+    ]
+  }
+]
